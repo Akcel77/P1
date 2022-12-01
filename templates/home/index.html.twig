@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ohana Studio{% endblock %}
+
+{% block body %}
+<div class="row container mx-auto mt-5 mb-5" id="about">
+
+    <div class="col-s-12 col-lg-6 my-auto">
+        <h2 class="text-center">Ohana Studio</h2>
+        <hr class="w-50 mx-auto">
+        <p>X-ten by Emy est née d'une passion remontant de mon enfance, pour voir le jour en 2016 dans le fin fond de mon petit salon tournaisien. À l'époque je trouvais cela chouette...
+            <br> <br>
+            J'ai vite compris qu'il fallait apprendre, désapprendre et apprendre à nouveau. Je me suis perfectionné en onglerie chez
+            <a href="https://www.indigonails.fr/">Indigo</a> et <a href="https://nails-company.fr/">Nails compagny</a> . J'avais la soif d'apprendre et me suis lancé un nouveau challenge, devenir en plus, une professionnelle dans le maquillage semi permanent.
+            <br><br><br>
+            <strong>Ohana Studio</strong> est le fruit de tous ces challenges, défit et idées conçues en pleines nuits. "Famille ", du privé au professionnel, chacun a mis sa patte dans mon nom. Mon compagnon m'a dit :" dans la vie, il faut entreprendre " et... J'ai entrepris.
+            <br><br>
+            Ma petite sœur Roxane Hellec est le fruit de toutes mes affiches, tarifs, flyers, cartes de visite, décor et j'en passe, elle est mon bras droit. Mon petit frère Axel Diagne est le créateur de ce magnifique site , il en a passé des heures dessus, d'ailleurs n'hésitez pas à le solliciter
+            : <a href="https://looha.io">looha.io</a>, Cédric car il a trouvé mon dessin et l'a travaillé et pour finir mon père qui a toujours cru en moi.
+            Je me devais aujourd'hui de concrétiser tout cela avec vous et de mettre à l'honneur toute cette reconnaissance en dehors du savoir faire et du métier.
+            <p class="text-center"><strong><img src="{{ asset('assets/img/star.png') }}" width="30px" alt="">Bienvenue dans mon univers<img src="{{ asset('assets/img/starreverse.png') }}" width="30px" alt=""></strong></p>
+        </p>
+    </div>
+    <div class="col-s-12 col-lg-6 my-auto">
+        <img src="{{ asset('assets/img/Emy.jpg') }}" class="img-fluid portrait "  alt="Photographie Selfie de Emy">
+    </div>
+</div>
+    <hr class="mx-auto w-75">
+    <div class="row">
+        <div class="col-8 text-center lead my-5 mx-auto">
+            <u>Nous travaillons avec planity pour la prise de rendez-vous en ligne.</u>
+            <br> <br>
+            <strong>ATTENTION </strong> toutes réservations de :
+            <ul>
+                <li><strong>- Maquillage semi permanent</strong></li>
+                <li><strong>- Fil collagène</strong></li>
+                <li><strong>- Microneedling</strong></li>
+            </ul>
+            demande un VIREMENT d'accompte en instantané
+            ou avec capture décran de virement sur messenger facebook: <a href="https://www.facebook.com/profile.php?id=100063809341097">Ohana Studio</a>
+            sans cela le rdv sera annulé dans les 24H automatiquement. <br> Merci de votre compréhension
+        </div>
+    </div>
+
+    <div class="container planity">
+        <div id="myId">
+
+        </div>
+    </div>
+    <script>
+        window.planity = {
+            key: '-NGWItdagqKwuW9lKkZW',
+            primaryColor: '#2ed573',
+            container: document.getElementById('#myId'),
+            accountContainer : document.getElementById('#myAccompte'),
+
+        };
+    </script>
+    <script src="https://d2skjte8udjqxw.cloudfront.net/widget/production/polyfills.latest.js"></script>
+    <script src="https://d2skjte8udjqxw.cloudfront.net/widget/production/app.latest.js"></script>
+
+{% endblock %}
