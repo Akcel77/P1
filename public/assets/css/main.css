@@ -129,5 +129,7 @@ li{
     }
     .footer-box{
         flex-direction: row;
+        width: 75%;
+        margin: auto;
     }
 }
