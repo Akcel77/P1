@@ -132,4 +132,8 @@ li{
         width: 75%;
         margin: auto;
     }
+    .frame{
+        width: 600px;
+        height : 300px;
+    }
 }
