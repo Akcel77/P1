@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>{% block title %}OhanaStudio{% endblock %}</title>
 
     <script src="{{ asset('assets/js/tarteaucitron/tarteaucitron.js') }}"></script>
@@ -76,6 +77,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=WindSong&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&display=swap" rel="stylesheet">
+
     <!-- Favicons -->
     <link rel="icon" href="{{ asset('assets/img/fav.png') }}" />
 
@@ -92,7 +97,7 @@
 <header>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand ohana" href="#">Ohana Studio</a>
+            <a class="navbar-brand ohana dark ohana-logo-hidden" href="https://ohanastudio.be/">Ohana Studio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -105,11 +110,9 @@
                         <a class="nav-link" aria-current="page" href="{{ path('app_home', {'_fragment': 'about'}) }}" >A Propos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{ path('app_home', {'_fragment': 'myId'}) }}" >Rendez-vous</a>
+                        <a class="nav-link" aria-current="page" href="https://salonkee.be/salon/ohana-studio/widget">Rendez-vous</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{ path('app_home', {'_fragment': 'myId'}) }}" >Mon compte</a>
-                    </li>
+
 
 
 
@@ -121,15 +124,14 @@
             </div>
         </div>
     </nav>
-
-    <div id="hero" class="vh-100" style="background-size:cover;background: url('{{ asset('assets/img/bgtest2.jpg') }}')">
-        <div class="mx-auto logo">
-            <h1 class="text-center neonText my-auto">Ohana Studio</h1>
+    <div class="banner-container">
+        <img src="{{ asset('assets/img/bgEmyNew.png') }}" alt="Bannière" class="banner-image img-fluid">
+        <div class="banner-text">
+            <h1>Ohana Studio</h1>
+            <h3 class="subtitle">INSTITUT</h3>
+            <p class="back">ED</p>
         </div>
-
     </div>
-
-
 
 </header>
 
@@ -142,12 +144,29 @@
 
         let scrollpos = window.scrollY
         const header = document.querySelector("nav")
-        const header_height = 900
+        const header_height = 400
 
         const add_class_on_scroll = () => header.classList.add("bg-dark")
         const add_dis_on_scroll = () => header.classList.add("d-none")
         const remove_class_on_scroll = () => header.classList.remove("bg-dark")
         const remove_dis_on_scroll = () => header.classList.remove("d-none")
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var logo = document.querySelector(".ohana.dark");
+            var logoHidden = document.querySelector(".ohana-logo-hidden");
+
+            window.addEventListener("scroll", function() {
+                var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > 400) {
+                    logo.classList.add("ohana-logo-visible");
+                    logoHidden.classList.remove("ohana-logo-hidden");
+                } else {
+                    logo.classList.remove("ohana-logo-visible");
+                    logoHidden.classList.add("ohana-logo-hidden");
+                }
+            });
+        });
 
         window.addEventListener('scroll', function() {
             scrollpos = window.scrollY;
@@ -160,7 +179,7 @@
 
 
 <footer class="footer-basic">
-   <div class="footer-div" style="background-size:cover;background: url('{{ asset('assets/img/bgtest2.jpg') }}');background-position: center;background-repeat: no-repeat;background-size: cover;">
+   <div class="footer-div" style="background-size:cover;background: url('{{ asset('assets/img/bgEmyNew.png') }}');background-position: center;background-repeat: no-repeat;background-size: cover;">
         <div class="social">
             <a href="https://www.instagram.com/ohanastudi0/">
                 <img src="{{ asset('assets/img/instagram.png') }}" width="50px" alt="Icon instagram">
@@ -175,19 +194,19 @@
        <ul class="list-inline">
            <li class="list-inline-item"><a href="{{ path('app_home', {'_fragment': 'header'}) }}">Accueil</a></li>
            <li class="list-inline-item"><a href="{{ path('app_home', {'_fragment': 'about'}) }}">A propos</a></li>
-           <li class="list-inline-item"><a href="{{ path('app_home', {'_fragment': 'services'}) }}">Prendre un Rendez-vous</a></li>
+           <li class="list-inline-item"><a href="https://salonkee.be/salon/ohana-studio/widget">Prendre un Rendez-vous</a></li>
            <li class="list-inline-item"><a href="{{ path('app_home', {'_fragment': 'contact'}) }}">Contact</a></li>
-           <li class="list-inline-item"><a href="{{ path('app_home', {'_fragment': 'planity'}) }}">Mon compte</a></li>
+
        </ul>
        <div class="footer-box">
            <div class="my-5">
-               <h4 class="text-center text-white ohana">Templeuve</h4>
+               <h4 class="text-center ohana">Templeuve</h4>
                <ul class="mb-4">
                    <li>Mardi : 08h30 - 20h00</li>
                </ul>
            </div>
            <div class="my-5">
-               <h4 class="text-center text-white ohana">Tournai Chez "Mona Lisa"</h4>
+               <h4 class="text-center ohana">Tournai Chez "Mona Lisa"</h4>
                <ul>
                    <li>Lundi : 08h30 - 18h00</li>
                    <li>Mercredi : 08h30 - 15h30</li>

@@ -2,12 +2,26 @@ body{
     margin: 0;
     padding: 0;
     background-color: #fff;
+    max-width: 100%;
 }
 
 h1, h2 , .ohana{
     font-family: 'WindSong', cursive;
 }
 
+h3{
+    font-family: 'Sorts Mill Goudy', serif;
+    font-weight: 100;
+    color: rgba(68, 68, 68, 0.2);
+}
+
+.back{
+    position: absolute;
+    color: rgba(71, 73, 73, 0.05);
+    top: 1rem;
+    font-size: 15rem;
+    margin: 0 auto;
+}
 p{
     text-align: justify;
 }
@@ -15,30 +29,37 @@ li{
     list-style-type: none;
 }
 
-.neonText {
-    font-size: 3rem;
-    /*color: #009432;*/
+.banner-container {
+    position: relative;
     width: 100%;
-    margin: auto auto;
-    color: #fff;
-    text-shadow:
-            0 0 7px #fff,
-            0 0 10px #fff,
-            0 0 21px #fff,
-            0 0 42px #2ed573,
-            0 0 82px #2ed573,
-            0 0 92px #2ed573,
-            0 0 102px #2ed573,
-            0 0 151px #2ed573;
-    border: 0.2rem solid #fff;
-    padding: 1rem;
-    box-shadow: 0 0 .2rem #fff,
-    0 0 .2rem #fff,
-    0 0 2rem #2ed573,
-    0 0 0.8rem #2ed573,
-    0 0 2.8rem #2ed573,
-    inset 0 0 1.3rem #2ed573;
+    max-height: 400px;
+    overflow: hidden;
 }
+
+.banner-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    padding: 0.5em;
+}
+
+
 .logo{
     padding : 40vh 2rem 0 2rem;
 }
@@ -54,7 +75,7 @@ li{
 }
 
 .footer-basic ul {
-    color: white;
+    color: #000000;
     padding:0;
     list-style:none;
     text-align:center;
@@ -109,10 +130,50 @@ li{
     justify-content: space-around;
     align-items: center;
 }
-@media screen and (min-width: 420px) {
+
+.container-reservation-button{
+    position: relative;
+    overflow: hidden;
+}
+
+.reservation-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all 0.4s;
+}
+
+p{
+    text-align: justify;
+}
+
+.reservation-button:hover:before {
+    right: 0;
+}
+
+.reservation-button:active {
+    transform: scale(0.95);
+}
+@media screen and (max-width: 420px) {
     .neonText {
         font-size: 5rem;
         padding: 2rem;
+    }
+
+    .nav-item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav-link{
+        color: #fce3e7 !important;
+    }
+    .navbar-collapse{
+        background-color: rgba(72, 62, 64, 0.13);
     }
 }
 
@@ -136,4 +197,21 @@ li{
         width: 600px;
         height : 300px;
     }
+}
+
+.ohana-logo-hidden {
+    display: block;
+}
+
+@media (max-width: 800px) {
+    .ohana-logo-visible {
+        display: block;
+    }
+    .ohana-logo-hidden {
+        display: none;
+    }
+}
+.btn-light{
+    background-color: #fce3e7!important;
+    border-color : #1A1C1F!important;
 }
