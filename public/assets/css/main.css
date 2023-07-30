@@ -12,7 +12,7 @@ h1, h2 , .ohana{
 h3{
     font-family: 'Sorts Mill Goudy', serif;
     font-weight: 100;
-    color: rgba(68, 68, 68, 0.2);
+    color: rgba(255, 255, 255, 0.57);
 }
 
 .back{
@@ -32,13 +32,16 @@ li{
 .banner-container {
     position: relative;
     width: 100%;
-    max-height: 400px;
-    overflow: hidden;
+    height: 70vh; /* Ceci garantit que le conteneur de bannière remplit toute la hauteur de la fenêtre du navigateur */
 }
 
 .banner-image {
-    max-width: 100%;
-    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ceci garantit que l'image couvre toute la surface du conteneur sans être déformée */
 }
 
 .banner-text {
@@ -47,11 +50,15 @@ li{
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;
+    color: white; /* Modifiez cette couleur pour l'adapter à votre conception */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ceci ajoute une ombre portée au texte */
+    padding: 10px; /* Ceci ajoute un peu d'espace autour du texte */
 }
-
+nav{
+    background-color: rgba(0, 0, 0, 0.41);
+}
 h1 {
-    font-size: 2.5em;
+    font-size: 4em;
 }
 
 .subtitle {
@@ -69,19 +76,35 @@ h1 {
 }
 
 /* FOOTER */
-.footer-div{
+
+.footer-div {
+    position: relative;
     width: 100%;
-    padding-top: 3rem;
+    padding: 3rem 0;
+    height: auto; /* Ceci garantit que le conteneur de bannière remplit toute la hauteur de la fenêtre du navigateur */
 }
 
+.footer-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ceci garantit que l'image couvre toute la surface du conteneur sans être déformée */
+    z-index: -1;
+}
 .footer-basic ul {
-    color: #000000;
+    color: #ffffff;
     padding:0;
     list-style:none;
     text-align:center;
     font-size:18px;
     line-height:1.6;
     margin-bottom:0;
+}
+
+footer h4{
+    color: #ffffff;
 }
 
 .footer-basic li {
