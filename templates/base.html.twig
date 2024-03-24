@@ -110,7 +110,7 @@
                         <a class="nav-link" aria-current="page" href="{{ path('app_home', {'_fragment': 'about'}) }}" >A Propos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="https://salonkee.be/salon/ohana-studio/widget">Rendez-vous</a>
+                        <a class="nav-link" aria-current="page" href="#$myContainerId">Rendez-vous</a>
                     </li>
 
 
@@ -139,42 +139,8 @@
 
 
 
-    <script>
+    <div id="$myContainerId"></div>
 
-
-        let scrollpos = window.scrollY
-        const header = document.querySelector("nav")
-        const header_height = 400
-
-        const add_class_on_scroll = () => header.classList.add("bg-dark")
-        const add_dis_on_scroll = () => header.classList.add("d-none")
-        const remove_class_on_scroll = () => header.classList.remove("bg-dark")
-        const remove_dis_on_scroll = () => header.classList.remove("d-none")
-
-        document.addEventListener("DOMContentLoaded", function() {
-            var logo = document.querySelector(".ohana.dark");
-            var logoHidden = document.querySelector(".ohana-logo-hidden");
-
-            window.addEventListener("scroll", function() {
-                var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                if (scrollTop > 400) {
-                    logo.classList.add("ohana-logo-visible");
-                    logoHidden.classList.remove("ohana-logo-hidden");
-                } else {
-                    logo.classList.remove("ohana-logo-visible");
-                    logoHidden.classList.add("ohana-logo-hidden");
-                }
-            });
-        });
-
-        window.addEventListener('scroll', function() {
-            scrollpos = window.scrollY;
-
-            if (scrollpos >= header_height) { add_class_on_scroll() }
-            else { remove_class_on_scroll() }
-        })
-    </script>
 
 
 
@@ -183,19 +149,19 @@
        <img src="{{ asset('assets/img/OhanaBanner.png') }}" alt="Bannière" class="footer-image">
         <div class="social">
             <a href="https://www.instagram.com/ohanastudi0/">
-                <img src="{{ asset('assets/img/instagram.png') }}" width="50px" alt="Icon instagram">
+                <img class="logo-footer" src="{{ asset('assets/img/instagram.png') }}" width="50px" alt="Icon instagram">
             </a>
             <a href="tel:+32 497 88 35 75">
-                <img src="{{ asset('assets/img/whatsapp.png') }}" width="50px" alt="Icon whatsapp">
+                <img class="logo-footer" src="{{ asset('assets/img/whatsapp.png') }}" width="40px" alt="Icon whatsapp">
             </a>
             <a href="https://www.facebook.com/profile.php?id=100063809341097">
-                <img src="{{ asset('assets/img/facebook.png') }}" width="50px" alt="Icon facebook">
+                <img class="logo-footer" src="{{ asset('assets/img/facebook.png') }}" width="50px" alt="Icon facebook">
             </a>
         </div>
        <ul class="list-inline">
            <li class="list-inline-item"><a href="{{ path('app_home', {'_fragment': 'header'}) }}">Accueil</a></li>
            <li class="list-inline-item"><a href="{{ path('app_home', {'_fragment': 'about'}) }}">A propos</a></li>
-           <li class="list-inline-item"><a href="https://salonkee.be/salon/ohana-studio/widget">Prendre un Rendez-vous</a></li>
+           <li class="list-inline-item"><a href="#$myContainerId">Prendre un Rendez-vous</a></li>
            <li class="list-inline-item"><a href="{{ path('app_home', {'_fragment': 'contact'}) }}">Contact</a></li>
 
        </ul>
@@ -229,6 +195,22 @@
 
 </body>
 
+
+<script>
+    var container = document.getElementById('$myContainerId');
+    window.planity = {
+        key: '-NGWItdagqKwuW9lKkZW',
+        primaryColor: 'pink',
+        // choisissez une des options ci-dessous
+        container: container,
+        // accountContainer: container,
+        // appointmentContainer: container,
+        // giftVoucherContainer: container,
+        // onlineShopContainer: container
+    };
+</script>
+<script src="https://d2skjte8udjqxw.cloudfront.net/widget/production/2/polyfills.latest.js"></script>
+<script src="https://d2skjte8udjqxw.cloudfront.net/widget/production/2/app.latest.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </html>

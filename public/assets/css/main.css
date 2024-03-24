@@ -81,7 +81,9 @@ h1 {
 }
 
 /* FOOTER */
-
+.logo-footer{
+    width: 50px!important;
+}
 .footer-div {
     position: relative;
     width: 100%;
